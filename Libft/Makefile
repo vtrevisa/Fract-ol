@@ -22,7 +22,7 @@ all:	$(NAME)
 
 ${NAME}: $(OBJS)
 	@ar -rcs $(NAME) $(OBJS)
-	@make clean
+
 clean:
 	rm -f ${OBJS}
 
