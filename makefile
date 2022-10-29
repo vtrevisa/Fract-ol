@@ -5,7 +5,7 @@ SOURCE	= ./mandatory/src/init.c ./mandatory/src/fractal.c ./mandatory/src/hooks.
 OBJ		= $(SOURCE:.c=.o)
 INCLUDE	= ./mandatory/include/
 MAIN	= ./mandatory/src/fract-ol.c
-FLAGS	= -I$(INCLUDE)
+FLAGS	= -Wall -Wextra -Werror -I$(INCLUDE)
 
 #--BONUS--
 NAME_B		= fractol_b.a
@@ -15,7 +15,7 @@ SOURCE_B	= ./bonus/src/init.c ./bonus/src/fractal.c ./bonus/src/hooks.c \
 OBJ_B		= $(SOURCE_B:.c=.o)
 INCLUDE_B	= ./bonus/include/
 MAIN_B		= ./bonus/src/fract-ol.c
-FLAGS_B		= -I$(INCLUDE_B)
+FLAGS_B		= -Wall -Wextra -Werror -I$(INCLUDE_B)
 
 #--LIBFT--
 LIBFT	= ./Libft/libft.a
@@ -43,6 +43,13 @@ clean:
 	rm $(NAME)
 
 fclean: clean 
+	rm a.out ;
+	$(MAKE) -C fclean $(LPATH) ;
+
+bclean: 
+	rm $(NAME_B)
+
+bfclean: bclean 
 	rm a.out ;
 	$(MAKE) -C fclean $(LPATH) ;
 	

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fract_ol.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vtrevisa <vtrevisa@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: vitor <vitor@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 04:14:51 by vtrevisa          #+#    #+#             */
-/*   Updated: 2022/10/27 04:19:19 by vtrevisa         ###   ########.fr       */
+/*   Updated: 2022/10/29 14:01:24 by vitor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,8 @@ typedef struct s_data
 	int		y;
 	int		count;
 	double	col_chg;
+	double multx;
+	double multy;
 }	t_data;
 
 void	init(t_data *data);
@@ -59,7 +61,7 @@ void	julia(t_data *data);
 void	arg_err(int err);
 void	tricorn(t_data *data);
 void	menu(t_data *data);
-void	zoom_in(double multx, double multy, t_data *data, int x, int y);
+void	zoom_in(t_data *data, int x, int y);
 void	move_ur(t_data *data, int flag);
 void	move_ld(t_data *data, int flag);
 #endif

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atof.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vtrevisa <vtrevisa@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: vitor <vitor@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 04:39:28 by vtrevisa          #+#    #+#             */
-/*   Updated: 2022/10/27 04:39:29 by vtrevisa         ###   ########.fr       */
+/*   Updated: 2022/10/29 14:04:51 by vitor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ static void	conversions(t_lst *lst, const char *str)
 		lst->ret = lst->ret * 10 + (lst->temp - 48);
 		lst->temp = str[++lst->i];
 	}
-	printf("1 ciclo: %f\n", lst->ret);
 	if (lst->temp == '.')
 	{
 		lst->temp = str[++lst->i];
@@ -31,13 +30,11 @@ static void	conversions(t_lst *lst, const char *str)
 			lst->temp = str[++lst->i];
 		}
 	}
-	printf("2 ciclo: %f\n", lst->ret);
 	while (lst->p_vir > 0)
 	{
 		lst->ret /= 10;
 		lst->p_vir--;
 	}
-	printf("3 ciclo: %f\n", lst->ret);
 }
 
 double	ft_atof(const char *str)

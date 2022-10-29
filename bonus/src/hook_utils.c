@@ -3,23 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   hook_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vtrevisa <vtrevisa@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: vitor <vitor@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 04:07:26 by vtrevisa          #+#    #+#             */
-/*   Updated: 2022/10/27 04:19:19 by vtrevisa         ###   ########.fr       */
+/*   Updated: 2022/10/29 14:03:12 by vitor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/fract_ol.h"
 
-void	zoom_in(double multx, double multy, t_data *data, int x, int y)
+void	zoom_in(t_data *data, int x, int y)
 {
-		multx = (data->maxr - data->minr);
-		multy = (data->maxi - data->mini);
-		data->minr += multx * (x / (double)MAXX) / 10;
-		data->mini += multy * (y / (double)MAXY) / 10;
-		data->maxi -= multy * (1 - y / (double)MAXY) / 10;
-		data->maxr -= multx * (1 - x / (double)MAXX) / 10;
+		data->multx = (data->maxr - data->minr);
+		data->multy = (data->maxi - data->mini);
+		data->minr += data->multx * (x / (double)MAXX) / 10;
+		data->mini += data->multy * (y / (double)MAXY) / 10;
+		data->maxi -= data->multy * (1 - y / (double)MAXY) / 10;
+		data->maxr -= data->multx * (1 - x / (double)MAXX) / 10;
 		data->maxcount += 10;
 }
 

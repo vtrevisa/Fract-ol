@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   hooks.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vtrevisa <vtrevisa@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: vitor <vitor@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 04:02:24 by vtrevisa          #+#    #+#             */
-/*   Updated: 2022/10/27 04:19:19 by vtrevisa         ###   ########.fr       */
+/*   Updated: 2022/10/29 14:01:40 by vitor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,8 @@
 
 int	zoom(int key, int x, int y, t_data *data)
 {
-	double	multx;
-	double	multy;
-
 	if (key == 4)
-		zoom_in(multx, multy, data, x, y);
+		zoom_in(data, x, y);
 	if (key == 5)
 	{
 		data->minr -= (data->maxr - data->minr) * 0.1;
