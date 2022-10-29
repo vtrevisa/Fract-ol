@@ -6,7 +6,7 @@
 /*   By: vitor <vitor@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 04:14:51 by vtrevisa          #+#    #+#             */
-/*   Updated: 2022/10/29 14:01:24 by vitor            ###   ########.fr       */
+/*   Updated: 2022/10/29 14:17:54 by vitor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,8 @@ typedef struct s_data
 	int		y;
 	int		count;
 	double	col_chg;
-	double multx;
-	double multy;
+	double	multx;
+	double	multy;
 }	t_data;
 
 void	init(t_data *data);
