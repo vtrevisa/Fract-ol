@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   hooks.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vitor <vitor@student.42.fr>                +#+  +:+       +#+        */
+/*   By: vtrevisa <vtrevisa@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 19:13:44 by vitor             #+#    #+#             */
-/*   Updated: 2022/10/26 19:15:03 by vitor            ###   ########.fr       */
+/*   Updated: 2022/10/27 04:22:54 by vtrevisa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,23 +15,25 @@
 
 int	zoom(int key, int x, int y, t_data *data)
 {
-	double multx, multy;
+	double	multx;
+	double	multy;
+
 	if (key == 4)
 	{
-		multx = (data->maxR - data->minR);
-		multy = (data->maxI - data->minI);
-		data->minR *= 0.9;
-		data->minI *= 0.9;
-		data->maxI *= 0.9;
-		data->maxR *= 0.9;
+		multx = (data->maxr - data->minr);
+		multy = (data->maxi - data->mini);
+		data->minr *= 0.9;
+		data->mini *= 0.9;
+		data->maxi *= 0.9;
+		data->maxr *= 0.9;
 		data->maxcount += 10;
 	}
 	if (key == 5)
 	{
-		data->minR *= 1.1;
-		data->minI *= 1.1;
-		data->maxI *= 1.1;
-		data->maxR *= 1.1;
+		data->minr *= 1.1;
+		data->mini *= 1.1;
+		data->maxi *= 1.1;
+		data->maxr *= 1.1;
 		if (data->maxcount > 30)
 			data->maxcount -= 10;
 	}

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fract_ol.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vitor <vitor@student.42.fr>                +#+  +:+       +#+        */
+/*   By: vtrevisa <vtrevisa@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 19:15:12 by vitor             #+#    #+#             */
-/*   Updated: 2022/10/26 19:58:11 by vitor            ###   ########.fr       */
+/*   Updated: 2022/10/27 04:23:57 by vtrevisa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,23 +31,23 @@ typedef struct s_data
 	int		line_len;
 	int		endian;
 	int		color;
-	double	minR;
-	double	minI;
-	double	maxR;
-	double	maxI;
+	double	minr;
+	double	mini;
+	double	maxr;
+	double	maxi;
 	double	xscale;
 	double	yscale;
 	double	zx;
 	double	zy;
 	double	cx;
 	double	cy;
-	double	Jc[2];
+	double	jc[2];
 	double	tempx;
 	int		x;
 	int		y;
 	int		count;
-	double		col_chg;
-} t_data;
+	double	col_chg;
+}	t_data;
 
 void	init(t_data *data);
 void	fractal(t_data *data);
@@ -57,5 +57,5 @@ int		handle_args(int argc, char **argv, t_data *data);
 int		exit_fract(t_data *data);
 void	julia(t_data *data);
 void	arg_err(int err);
-void	menu (t_data *data);
+void	menu(t_data *data);
 #endif

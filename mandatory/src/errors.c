@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   errors.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vitor <vitor@student.42.fr>                +#+  +:+       +#+        */
+/*   By: vtrevisa <vtrevisa@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 19:13:34 by vitor             #+#    #+#             */
-/*   Updated: 2022/10/26 19:18:48 by vitor            ###   ########.fr       */
+/*   Updated: 2022/10/27 04:20:28 by vtrevisa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ int	exit_fract(t_data *data)
 	exit(0);
 }
 
-void arg_err(int err)
+void	arg_err(int err)
 {
-	if( err == 1)
+	if (err == 1)
 	{
 		ft_printf("Escolha seu fractal:\n");
 		ft_printf("->\033[0;31mMandelbrot\033[0m\n");
@@ -39,7 +39,7 @@ void arg_err(int err)
 	}
 	else if (err == 3)
 	{
-		ft_printf("Especificações Incompatíveis, favor insira como o exemplo:\n");
+		ft_printf("Especificações Incompatíveis, insira como o exemplo:\n");
 		ft_printf("->\033[0;31m0.543 1.0\033[0m\n");
 		exit(0);
 	}
@@ -50,17 +50,17 @@ int	handle_args(int argc, char **argv, t_data *data)
 	if (argc < 2)
 		arg_err(1);
 	if (ft_strncmp(argv[1], "Mandelbrot", 10) == 0)
-		return(1);
+		return (1);
 	if (ft_strncmp(argv[1], "Julia", 10) == 0)
 	{
 		if (argc < 4)
 		{
 			arg_err(3);
 		}
-		data->Jc[0] = ft_atof(argv[2]);
-		data->Jc[1] = ft_atof(argv[3]);
-		return(2);
+		data->jc[0] = ft_atof(argv[2]);
+		data->jc[1] = ft_atof(argv[3]);
+		return (2);
 	}
 	else
-		arg_err(2);
+		arg_err (2);
 }

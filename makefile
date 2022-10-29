@@ -10,7 +10,8 @@ FLAGS	= -I$(INCLUDE)
 #--BONUS--
 NAME_B		= fractol_b.a
 SOURCE_B	= ./bonus/src/init.c ./bonus/src/fractal.c ./bonus/src/hooks.c \
-			./bonus/src/mandelbrot.c ./bonus/src/errors.c ./bonus/src/julia.c ./bonus/src/tricorn.c
+			./bonus/src/mandelbrot.c ./bonus/src/errors.c ./bonus/src/julia.c \
+			./bonus/src/tricorn.c ./bonus/src/hook_utils.c
 OBJ_B		= $(SOURCE_B:.c=.o)
 INCLUDE_B	= ./bonus/include/
 MAIN_B		= ./bonus/src/fract-ol.c

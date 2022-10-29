@@ -98,5 +98,13 @@ int		hexlen(unsigned long int lli);
 char	*htoa(unsigned long int lli, int flag);
 
 /*====FRACT-OL====*/
+typedef struct s_lst
+{
+	double	ret;
+	int		p_vir;
+	int		i;
+	int		temp;
+}	t_lst;
+
 double	ft_atof(const char *str);
 #endif
