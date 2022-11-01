@@ -6,12 +6,17 @@
 /*   By: vitor <vitor@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 19:13:44 by vitor             #+#    #+#             */
-/*   Updated: 2022/11/01 15:14:10 by vitor            ###   ########.fr       */
+/*   Updated: 2022/11/01 15:24:26 by vitor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/fract_ol.h"
-#include <stdio.h>
+
+int	refresh(t_data *data)
+{
+	mlx_put_image_to_window(data->mlx_ptr, data->win_ptr, data->img_ptr, 0, 0);
+	return (0);
+}
 
 int	zoom(int key, int x, int y, t_data *data)
 {
@@ -52,6 +57,7 @@ int	keys(int key, t_data *data)
 
 void	hooks(t_data *data)
 {
+	mlx_expose_hook(data->win_ptr, refresh, data);
 	mlx_mouse_hook(data->win_ptr, zoom, data);
 	mlx_key_hook(data->win_ptr, keys, data);
 	mlx_hook(data->win_ptr, 17, 0, exit_fract, data);
