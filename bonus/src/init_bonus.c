@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init.c                                             :+:      :+:    :+:   */
+/*   init_bonus.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vtrevisa <vtrevisa@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: vitor <vitor@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 03:54:52 by vtrevisa          #+#    #+#             */
-/*   Updated: 2022/10/27 04:19:19 by vtrevisa         ###   ########.fr       */
+/*   Updated: 2022/11/01 16:16:04 by vitor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,13 @@
 
 void	init(t_data *data)
 {
-	data->maxcount = 30;
+	data->maxcount = 100;
 	data->minr = -2;
 	data->mini = -1.5;
 	data->maxr = 1;
 	data->maxi = data->mini + (data->maxr - data->minr) * (MAXX / MAXY);
 	data->color = 127;
 	data->col_chg = 1;
-	data->jc[0] = 0.01;
 	data->mlx_ptr = mlx_init();
 	data->win_ptr = mlx_new_window(data->mlx_ptr, MAXX, MAXY, "Fract-ol");
 	data->img_ptr = mlx_new_image(data->mlx_ptr, MAXX, MAXY);

@@ -6,7 +6,7 @@
 /*   By: vitor <vitor@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 19:13:44 by vitor             #+#    #+#             */
-/*   Updated: 2022/11/01 15:24:26 by vitor            ###   ########.fr       */
+/*   Updated: 2022/11/01 15:57:36 by vitor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int	zoom(int key, int x, int y, t_data *data)
 		data->mini *= 1.1;
 		data->maxi *= 1.1;
 		data->maxr *= 1.1;
-		if (data->maxcount > 30)
+		if (data->maxcount > 100)
 			data->maxcount -= 10;
 	}
 	fractal (data);

@@ -6,7 +6,7 @@
 /*   By: vitor <vitor@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 23:14:48 by vtrevisa          #+#    #+#             */
-/*   Updated: 2022/10/19 16:20:13 by vitor            ###   ########.fr       */
+/*   Updated: 2022/11/01 16:03:13 by vitor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,6 +104,7 @@ typedef struct s_lst
 	int		p_vir;
 	int		i;
 	int		temp;
+	int		sig;
 }	t_lst;
 
 double	ft_atof(const char *str);

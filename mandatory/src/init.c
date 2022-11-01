@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vtrevisa <vtrevisa@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: vitor <vitor@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 19:13:47 by vitor             #+#    #+#             */
-/*   Updated: 2022/10/27 04:21:46 by vtrevisa         ###   ########.fr       */
+/*   Updated: 2022/11/01 15:57:28 by vitor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	init(t_data *data)
 {
-	data->maxcount = 30;
+	data->maxcount = 100;
 	data->minr = -2;
 	data->mini = -1.5;
 	data->maxr = 1;
