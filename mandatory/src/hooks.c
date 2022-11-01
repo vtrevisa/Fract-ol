@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   hooks.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vtrevisa <vtrevisa@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: vitor <vitor@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 19:13:44 by vitor             #+#    #+#             */
-/*   Updated: 2022/10/27 04:22:54 by vtrevisa         ###   ########.fr       */
+/*   Updated: 2022/11/01 15:14:10 by vitor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ int	zoom(int key, int x, int y, t_data *data)
 			data->maxcount -= 10;
 	}
 	fractal (data);
+	return (0);
 }
 
 int	keys(int key, t_data *data)
@@ -46,6 +47,7 @@ int	keys(int key, t_data *data)
 	{
 		exit_fract(data);
 	}
+	return (0);
 }
 
 void	hooks(t_data *data)

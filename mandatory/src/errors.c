@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   errors.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vtrevisa <vtrevisa@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: vitor <vitor@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 19:13:34 by vitor             #+#    #+#             */
-/*   Updated: 2022/10/27 04:20:28 by vtrevisa         ###   ########.fr       */
+/*   Updated: 2022/11/01 15:14:25 by vitor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,4 +63,5 @@ int	handle_args(int argc, char **argv, t_data *data)
 	}
 	else
 		arg_err (2);
+	return (0);
 }
