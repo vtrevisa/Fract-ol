@@ -6,7 +6,7 @@
 /*   By: vitor <vitor@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 19:13:34 by vitor             #+#    #+#             */
-/*   Updated: 2022/11/01 15:29:56 by vitor            ###   ########.fr       */
+/*   Updated: 2022/11/01 15:34:52 by vitor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,16 +32,16 @@ void	arg_err(int err)
 	}
 	else if (err == 2)
 	{
-		ft_printf("Fractal incompatível, escolha entre os abaixo \
-										e verifique a escrita:\n");
+		ft_printf("Fractal incompatível, ");
+		ft_printf("escolha entre os abaixo e verifique a escrita:\n");
 		ft_printf("->\033[0;31mMandelbrot\033[0m\n");
 		ft_printf("->\033[0;31mJulia\033[0m\n");
 		exit(0);
 	}
 	else if (err == 3)
 	{
-		ft_printf("Parâmetros incompatíveis, insira os parâmetros \
-													como o exemplo:\n");
+		ft_printf("Parâmetros incompatíveis, ");
+		ft_printf("insira os parâmetros como o exemplo:\n");
 		ft_printf("->\033[0;31m./fractol Julia <valor 1> <valor 2>\033[0m\n");
 		exit(0);
 	}
