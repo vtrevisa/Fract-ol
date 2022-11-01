@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   errors.c                                           :+:      :+:    :+:   */
+/*   errors_bonus.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vtrevisa <vtrevisa@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: vitor <vitor@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 03:52:39 by vtrevisa          #+#    #+#             */
-/*   Updated: 2022/10/27 04:16:37 by vtrevisa         ###   ########.fr       */
+/*   Updated: 2022/11/01 15:30:01 by vitor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	arg_err(int err)
 {
 	if (err == 1)
 	{
-		ft_printf("Escolha seu fractal:\n");
+		ft_printf("Escolha um dos fractais abaixo:\n");
 		ft_printf("->\033[0;31mMandelbrot\033[0m\n");
 		ft_printf("->\033[0;31mJulia\033[0m\n");
 		ft_printf("->\033[0;31mTricorn\033[0m\n");
@@ -33,7 +33,8 @@ void	arg_err(int err)
 	}
 	else if (err == 2)
 	{
-		ft_printf("Fractal incompatível, escolha entre os abaixo:\n");
+		ft_printf("Fractal incompatível, escolha entre os abaixo \
+										e verifique a escrita:\n");
 		ft_printf("->\033[0;31mMandelbrot\033[0m\n");
 		ft_printf("->\033[0;31mJulia\033[0m\n");
 		ft_printf("->\033[0;31mTricorn\033[0m\n");
@@ -41,8 +42,9 @@ void	arg_err(int err)
 	}
 	else if (err == 3)
 	{
-		ft_printf("Especificações Incompatíveis, insira como o exemplo:\n");
-		ft_printf("->\033[0;31m0.543 -0.05\033[0m\n");
+		ft_printf("Parâmetros incompatíveis, insira os parâmetros \
+													como o exemplo:\n");
+		ft_printf("->\033[0;31m./fractol Julia <valor 1> <valor 2>\033[0m\n");
 		exit(0);
 	}
 }
