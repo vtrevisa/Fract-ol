@@ -1,56 +1,44 @@
 #--STANDARD--
-NAME	= fractol.a
-SOURCE	= ./mandatory/src/init.c ./mandatory/src/fractal.c ./mandatory/src/hooks.c \
-		./mandatory/src/mandelbrot.c ./mandatory/src/errors.c ./mandatory/src/julia.c
-OBJ		= $(SOURCE:.c=.o)
-INCLUDE	= ./mandatory/include/
-MAIN	= ./mandatory/src/fract-ol.c
-FLAGS	= -Wall -Wextra -Werror -I$(INCLUDE)
+NAME		= fractol
+CFLAGS		= -g3 -O3 -Imlx -Lmlx -lmlx -lXext -lX11 -lm -Wall -Wextra -Werror
+OBJ_D		= ./objects
+
+#--MANDATORY--
+SRC_DIR		= ./mandatory/src/
+SRC			= init.c fractal.c hooks.c mandelbrot.c errors.c julia.c fract-ol.c
+OBJ			= $(addprefix $(OBJ_D)/, $(SRC:.c=.o))
 
 #--BONUS--
-NAME_B		= fractol_b.a
-SOURCE_B	= ./bonus/src/init.c ./bonus/src/fractal.c ./bonus/src/hooks.c \
-			./bonus/src/mandelbrot.c ./bonus/src/errors.c ./bonus/src/julia.c \
-			./bonus/src/tricorn.c ./bonus/src/hook_utils.c
-OBJ_B		= $(SOURCE_B:.c=.o)
-INCLUDE_B	= ./bonus/include/
-MAIN_B		= ./bonus/src/fract-ol.c
-FLAGS_B		= -Wall -Wextra -Werror -I$(INCLUDE_B)
+SRCB_DIR	= ./bonus/src/
+SRC_B		= init_bonus.c fractal_bonus.c hooks_bonus.c mandelbrot_bonus.c errors_bonus.c \
+			julia_bonus.c tricorn_bonus.c hook_utils_bonus.c fract-ol_bonus.c
+OBJ_B		= $(addprefix $(OBJ_D)/, $(SRC_B:.c=.o))
 
 #--LIBFT--
-LIBFT	= ./Libft/libft.a
-LIB.H	= libft.h
+LIBFT	= $(addprefix $(LPATH)/, libft.a)
 LPATH	= ./Libft/
 
-all:	$(LIBFT) $(NAME)
-	gcc $(FLAGS) $(MAIN) $(NAME) -lbsd -lmlx -lXext -lX11
+all: $(NAME)
 
-bonus:	$(LIBFT) $(NAME_B)
-	gcc $(FLAGS_B) $(MAIN_B) $(NAME_B) -lbsd -lmlx -lXext -lX11
+bonus:
+	@make OBJ="$(OBJ_B)" all --no-print-directory
+
+$(NAME): $(LIBFT) $(OBJ)
+	cc $(OBJ) $(LIBFT) $(CFLAGS) -o $(NAME)
 
 $(LIBFT):
 	$(MAKE) -C $(LPATH)
 
-$(NAME): $(OBJ)
-	mv $(LIBFT) $(NAME)
-	ar -rcs $@ $^
+$(OBJ_D)/%.o: $(SRC_DIR)/%.c
+	mkdir -p $(OBJ_D)
+	cc -c $< -o $@
 
-$(NAME_B): $(OBJ_B)
-	mv $(LIBFT)	$(NAME_B)
-	ar -rcs $@ $^
-	
 clean:
+	rm $(OBJ)
+
+fclean: clean
 	rm $(NAME)
 
-fclean: clean 
-	rm a.out ;
-	$(MAKE) -C fclean $(LPATH) ;
+re: fclean all
 
-bclean: 
-	rm $(NAME_B)
-
-bfclean: bclean 
-	rm a.out ;
-	$(MAKE) -C fclean $(LPATH) ;
-	
-re: clean all
+.PHONY: all clean fclean re bonus
