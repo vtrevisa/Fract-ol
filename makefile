@@ -33,11 +33,17 @@ $(OBJ_D)/%.o: $(SRC_DIR)/%.c
 	mkdir -p $(OBJ_D)
 	cc -c $< -o $@
 
+$(OBJ_D)/%.o: $(SRCB_DIR)/%.c
+	mkdir -p $(OBJ_D)
+	cc -c $< -o $@
+
 clean:
-	rm $(OBJ)
+	rm -rf $(OBJ_D)
+	$(MAKE) clean -C $(LPATH)
 
 fclean: clean
 	rm $(NAME)
+	$(MAKE) fclean -C $(LPATH)
 
 re: fclean all
 
