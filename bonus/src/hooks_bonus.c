@@ -6,7 +6,7 @@
 /*   By: vitor <vitor@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 04:02:24 by vtrevisa          #+#    #+#             */
-/*   Updated: 2022/11/01 15:57:57 by vitor            ###   ########.fr       */
+/*   Updated: 2022/11/04 12:42:20 by vitor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ int	zoom(int key, int x, int y, t_data *data)
 		data->jc[1] -= 0.04;
 	}
 	fractal (data);
+	return (0);
 }
 
 int	keys(int key, t_data *data)
@@ -61,6 +62,7 @@ int	keys(int key, t_data *data)
 	if (key == 101)
 		data->col_chg /= 10;
 	fractal(data);
+	return (0);
 }
 
 void	hooks(t_data *data)

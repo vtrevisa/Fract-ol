@@ -6,7 +6,7 @@
 /*   By: vitor <vitor@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 03:52:39 by vtrevisa          #+#    #+#             */
-/*   Updated: 2022/11/01 15:33:42 by vitor            ###   ########.fr       */
+/*   Updated: 2022/11/04 12:42:45 by vitor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,4 +69,5 @@ int	handle_args(int argc, char **argv, t_data *data)
 		return (3);
 	else
 		arg_err (2);
+	return (0);
 }
