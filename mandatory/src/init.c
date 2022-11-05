@@ -6,7 +6,7 @@
 /*   By: vitor <vitor@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 19:13:47 by vitor             #+#    #+#             */
-/*   Updated: 2022/11/01 15:57:28 by vitor            ###   ########.fr       */
+/*   Updated: 2022/11/05 14:55:32 by vitor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ void	init(t_data *data)
 	data->maxi = data->mini + (data->maxr - data->minr) * (MAXX / MAXY);
 	data->color = 127;
 	data->col_chg = 1;
-	data->jc[0] = 0.01;
 	data->mlx_ptr = mlx_init();
 	data->win_ptr = mlx_new_window(data->mlx_ptr, MAXX, MAXY, "Fract-ol");
 	data->img_ptr = mlx_new_image(data->mlx_ptr, MAXX, MAXY);
