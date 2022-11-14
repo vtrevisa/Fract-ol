@@ -21,7 +21,7 @@ CFLAGS	= -Wall -Wextra -Werror -I./Include/ -D BUFFER_SIZE=1
 all:	$(NAME)
 
 ${NAME}: $(OBJS)
-	@ar -rcs $(NAME) $(OBJS)
+	@ar -rcs $(NAME) $(OBJS) 
 
 clean:
 	rm -f ${OBJS}

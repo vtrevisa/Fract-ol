@@ -24,26 +24,28 @@ bonus:
 	@make OBJ="$(OBJ_B)" all --no-print-directory
 
 $(NAME): $(LIBFT) $(OBJ)
-	cc $(OBJ) $(LIBFT) $(CFLAGS) -o $(NAME)
+	@cc $(OBJ) $(LIBFT) $(CFLAGS) -o $(NAME)
+	@echo "\033[0;32m$(NAME) created!\033[0m"
+	@echo "\033[0;34mrun ./fractol and follow the instructions\033[0m"
 
 $(LIBFT):
-	$(MAKE) -C $(LPATH)
+	@$(MAKE) --silent -C $(LPATH) && echo "\033[0;32mLibft Compiled!\033[0m"
 
 $(OBJ_D)/%.o: $(SRC_DIR)/%.c
-	mkdir -p $(OBJ_D)
-	cc -c $< -o $@
+	@mkdir -p $(OBJ_D)
+	@cc -c $< -o $@ && echo "\033[0;32mObjects compiled!\033[0m"
 
 $(OBJ_D)/%.o: $(SRCB_DIR)/%.c
-	mkdir -p $(OBJ_D)
-	cc -c $< -o $@
+	@mkdir -p $(OBJ_D)
+	@cc -c $< -o $@ && echo "\033[0;32mObjects bonus compiled!\033[0m"
 
 clean:
-	rm -rf $(OBJ_D)
-	$(MAKE) clean -C $(LPATH)
+	@rm -rf $(OBJ_D)
+	@$(MAKE) clean --silent -C $(LPATH) && echo "\033[1;31mobjects cleaned!\033[0m"
 
 fclean: clean
-	rm $(NAME)
-	$(MAKE) fclean -C $(LPATH)
+	@rm $(NAME)
+	@$(MAKE) --silent fclean -C $(LPATH) && echo "\033[1;31mfractol deleted!\033[0m"
 
 re: fclean all
 
