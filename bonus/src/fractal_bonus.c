@@ -1,16 +1,15 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fractal.c                                          :+:      :+:    :+:   */
+/*   fractal_bonus.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vtrevisa <vtrevisa@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: vtrevisa <vtrevisa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 03:58:57 by vtrevisa          #+#    #+#             */
-/*   Updated: 2022/10/27 04:19:19 by vtrevisa         ###   ########.fr       */
+/*   Updated: 2025/02/18 15:17:17 by vtrevisa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <mlx.h>
 #include "../include/fract_ol.h"
 
 void	draw_pix(t_data *data)

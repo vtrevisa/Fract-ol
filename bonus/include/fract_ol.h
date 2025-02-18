@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   fract_ol.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vitor <vitor@student.42.fr>                +#+  +:+       +#+        */
+/*   By: vtrevisa <vtrevisa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 04:14:51 by vtrevisa          #+#    #+#             */
-/*   Updated: 2022/10/29 14:17:54 by vitor            ###   ########.fr       */
+/*   Updated: 2025/02/18 15:17:36 by vtrevisa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FRACT_OL_H
 # define FRACT_OL_H
-# include <mlx.h>
+#include "../../mlx_linux/mlx.h"
+#include "../../mlx_linux/mlx_int.h"
 # include "../../Libft/Include/libft.h"
 # include <stdlib.h>
 # include <stdio.h>
